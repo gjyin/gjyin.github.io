@@ -152,11 +152,11 @@ a.btn:hover {
   margin-right: 0;
 }
 .header .profile-image {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  top: -80px;
-  margin-left: -80px;
+  position: relative;
+  width: 360px;
+  height: 480px;
+  top: 0px;
+  margin-left: 0px;
 }
 .header .name {
   font-size: 48px;

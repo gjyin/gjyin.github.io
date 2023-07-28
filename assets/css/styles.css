@@ -153,13 +153,13 @@ a.btn:hover {
 }
 .header .profile-image {
   position: relative;
-  width: 180px;
-  height: 240px;
+  width: 120px;
+  height: 160px;
   top: 0px;
   margin-left: 0px;
 }
 .header .name {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 15px;
   letter-spacing: 0.5px;
 }

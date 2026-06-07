@@ -60,6 +60,186 @@
     </ul>
   </div>
 
+  <div class="card research-card">
+    <h2 class="card-title">Recent Research</h2>
+    <div class="research-map">
+      <div class="center-box">
+        <h3>RL-Driven Post-Training Pipeline</h3>
+        <p>Closed loop: Evaluate gaps → Design rewards → Optimize policy → Train agents → Deploy applications → Evaluate again</p>
+      </div>
+
+      <div class="flow-row">
+        <span class="flow-label">benchmarks reveal gaps</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-label">gaps motivate reward design</span>
+      </div>
+
+      <div class="module-row">
+        <div class="module m-eval">
+          <div class="module-title">Evaluation & Benchmarks</div>
+          <div class="sub-item">
+            <h4>Reasoning Benchmarks</h4>
+            <div class="kw"><span class="hl">Multi-hop visual reasoning</span> · agentic search · logical consistency</div>
+            <div class="papers">VistaHop (multi-hop visual) · LocalSearchBench (agentic search) · LogiCon (logic eval)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Rec / Multimodal Bench</h4>
+            <div class="kw"><span class="hl">RM quality for rec</span> · dietary perception · complexity scaling</div>
+            <div class="papers">RecRM (rec reward eval) · DiningBench (dietary) · Complexity (scaling)</div>
+          </div>
+        </div>
+
+        <div class="module m-reward">
+          <div class="module-title">Reward Design</div>
+          <div class="sub-item">
+            <h4>Label-Free RM</h4>
+            <div class="kw"><span class="hl">Self-supervised / latent / VL alignment rewards</span> — no human labels needed</div>
+            <div class="papers">SSL4RL (self-supervised) · RLLR (latent reward) · RCLIP (VL reward) · CDRRM (contrastive rubric)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Active & Stepwise</h4>
+            <div class="kw"><span class="hl">Per-step verifiable reward</span> · active hard case selection · critique-as-reward</div>
+            <div class="papers">CARE (active explore) · Stepwise (step reward) · CARD (critique reward)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Multi-Dim Fusion</h4>
+            <div class="kw"><span class="hl">Adaptive multi-reward weighting</span> by training stage</div>
+            <div class="papers">AWPO (adaptive weight) · ZipRL (multi-dim)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-row">
+        <span class="flow-label">reward signals</span>
+        <span class="flow-arrow">↓</span>
+        <span class="flow-label">feed policy training</span>
+      </div>
+
+      <div class="module-row">
+        <div class="module m-policy" style="flex:1;">
+          <div class="module-title">Policy Optimization</div>
+          <div class="sub-row">
+            <div class="sub-item">
+              <h4>GRPO Bias Correction</h4>
+              <div class="kw"><span class="hl">Down-weight high-advantage</span> · debiased group-relative estimator</div>
+              <div class="papers">HA-DW (advantage downweight) · GRA-Biased (bias analysis)</div>
+            </div>
+            <div class="sub-item">
+              <h4>Sampling Strategy</h4>
+              <div class="kw"><span class="hl">Bandit-style adaptive rollout</span> · negative sample residual RL</div>
+              <div class="papers">Ctx Bandits (adaptive rollout) · ResRL (negative projection)</div>
+            </div>
+            <div class="sub-item">
+              <h4>SFT+RL Fusion & Curriculum</h4>
+              <div class="kw"><span class="hl">Single-stage joint training</span> · difficulty-aware curriculum</div>
+              <div class="papers">SRFT (joint SFT+RL) · HiDiffTIR (difficulty curriculum)</div>
+            </div>
+            <div class="sub-item">
+              <h4>Token-Level Credit</h4>
+              <div class="kw"><span class="hl">Reshape tool-token gradients</span> · meta-reflective credit assignment</div>
+              <div class="papers">ResT (tool-token gradient) · AMR-SD (self-distill credit)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-row">
+        <span class="flow-label">optimized policy</span>
+        <span class="flow-arrow">↓</span>
+        <span class="flow-label">trains agents + efficient deployment</span>
+      </div>
+
+      <div class="module-row">
+        <div class="module m-agent">
+          <div class="module-title">Agent Training</div>
+          <div class="sub-item">
+            <h4>RL Framework</h4>
+            <div class="kw"><span class="hl">Plug-and-play multi-turn tool RL</span> · modular env/reward/policy</div>
+            <div class="papers">RLFactory (modular agent RL)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Domain Agents</h4>
+            <div class="kw"><span class="hl">Adaptive search depth</span> · audited self-play · multi-turn SQL · multi-image vision</div>
+            <div class="papers">AutoSearch (search depth) · OASP (audited self-play) · CARD (dense process reward) · MTIR (SQL agent) · IMAgent (multi-image)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Data Synthesis</h4>
+            <div class="kw"><span class="hl">Synthetic tool-use data w/o real APIs</span> · controllable env complexity</div>
+            <div class="papers">ToolForge (synthetic trajectories) · ToolFoundry (env synthesis)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Agent Memory</h4>
+            <div class="kw"><span class="hl">Trainable graph memory</span> · temporal memory · episodic-parametric · boundary-aware skill</div>
+            <div class="papers">Graph Memory (strategy graph) · Temporal (time-aware) · UniMem (episodic→parametric) · When Not to Imitate (skill boundary)</div>
+          </div>
+        </div>
+
+        <div class="module m-eff">
+          <div class="module-title">Efficiency</div>
+          <div class="sub-item">
+            <h4>Knowledge Distillation</h4>
+            <div class="kw"><span class="hl">Online policy distill during RL</span> · privileged self-play</div>
+            <div class="papers">POPD (online distill) · π-Play (privileged self-play)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Inference Speedup</h4>
+            <div class="kw"><span class="hl">Polar KV-cache 2-bit quant</span> · speculative decode · overthinking control</div>
+            <div class="papers">PolarQuant (KV quant) · Spec.Decode (domain-adaptive) · OCC (overthink ctrl) · PACE (efficient reasoning)</div>
+          </div>
+          <div class="sub-item">
+            <h4>Interpretability</h4>
+            <div class="kw"><span class="hl">RL-guided ensemble routing</span> · SAE predicts transferability</div>
+            <div class="papers">RLAE (ensemble routing) · SAE (transfer predict) · Expert Mono (monotonicity)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-row">
+        <span class="flow-label">agents + efficiency</span>
+        <span class="flow-arrow">↓</span>
+        <span class="flow-label">deploy to real tasks</span>
+      </div>
+
+      <div class="module-row">
+        <div class="module m-app" style="flex:1;">
+          <div class="module-title">Applications</div>
+          <div class="sub-row">
+            <div class="sub-item">
+              <h4>Complex Reasoning</h4>
+              <div class="kw"><span class="hl">Sparse multi-agent debate</span> · graph agentic probing</div>
+              <div class="papers">MAD-Logic (logic debate) · GRASP (graph reasoning)</div>
+            </div>
+            <div class="sub-item">
+              <h4>Code & UI</h4>
+              <div class="kw"><span class="hl">Topology-evolving code gen</span> · multi-agent UI orchestration</div>
+              <div class="papers">AgentConductor (code topology) · UIOrchestra (UI multi-agent)</div>
+            </div>
+            <div class="sub-item">
+              <h4>Rec & Personalization</h4>
+              <div class="kw"><span class="hl">Behavioral semantic alignment</span> · token-level personalization · tag-guided RL · latent nutrition</div>
+              <div class="papers">SemanticConv (rec alignment) · Rethinking (token personal.) · TagPR (tag RL) · ViPER (visual self-evolve) · LatentNutri (latent nutrition)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-row">
+        <span class="flow-arrow">↑</span>
+        <span class="flow-label">application results validate via benchmarks → identify new gaps → cycle repeats</span>
+        <span class="flow-arrow">↑</span>
+      </div>
+
+      <div class="connections">
+        <div class="conn-tag"><b>Eval → Reward:</b> gaps drive design</div>
+        <div class="conn-tag"><b>Reward → Policy:</b> signals feed training</div>
+        <div class="conn-tag"><b>Policy → Agent:</b> fine-grained credit enables tool-use</div>
+        <div class="conn-tag"><b>Agent → App:</b> deploy agents</div>
+        <div class="conn-tag"><b>Efficiency → App:</b> enables serving</div>
+        <div class="conn-tag"><b>App → Eval:</b> validate & find new gaps</div>
+      </div>
+    </div>
+  </div>
+
   <div class="card publications-card">
     <h2 class="card-title">Publications</h2>
     <p class="pub-note">* Equal contribution &nbsp;&nbsp; # Corresponding author</p>

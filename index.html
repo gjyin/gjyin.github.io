@@ -826,11 +826,13 @@
 </script>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
-document.getElementById('coffee-chat-btn').addEventListener('click', function() {
+document.getElementById('coffee-chat-btn').addEventListener('click', function(e) {
+  e.preventDefault();
   if (typeof Calendly !== 'undefined') {
     Calendly.initPopupWidget({ url: 'https://calendly.com/gjyin91/15min' });
+    return false;
   } else {
     window.open('https://calendly.com/gjyin91/15min', '_blank');
   }

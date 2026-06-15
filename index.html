@@ -20,6 +20,9 @@
         <li><i class="fa fa-envelope"></i> gjyin[AT]outlook[DOT]com</li>
         <li><i class="fa fa-envelope"></i> gjyin[AT]mail[DOT]ustc[DOT]edu[DOT]cn</li>
       </ul>
+      <button class="coffee-chat-btn" id="coffee-chat-btn">
+        <i class="fa fa-coffee"></i> Coffee Chat
+      </button>
     </div>
   </div>
 </header>
@@ -820,6 +823,18 @@
     }
   });
 })();
+</script>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+document.getElementById('coffee-chat-btn').addEventListener('click', function() {
+  if (typeof Calendly !== 'undefined') {
+    Calendly.initPopupWidget({ url: 'https://calendly.com/gjyin91/30min' });
+  } else {
+    window.open('https://calendly.com/gjyin91/30min', '_blank');
+  }
+});
 </script>
 
 </body>
